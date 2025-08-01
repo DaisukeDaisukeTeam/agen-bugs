@@ -11,9 +11,9 @@ if(!file_exists(__DIR__ . '/../vendor/autoload.php')){
 
 include __DIR__ . '/../vendor/autoload.php';
 
-echo "===========main===========" . PHP_EOL;
+echo "===========bug212===========" . PHP_EOL;
 
 $bugs = new bug212();
 $bugs->main();
 
-echo "===========main===========" . PHP_EOL;
+echo "===========bug212===========" . PHP_EOL;
