@@ -13,6 +13,7 @@
     "scripts": {
         "runs": [
             "@composer install --no-dev  --classmap-authoritative --ignore-platform-reqs",
+            "@composer dump-a",
             "@php src/main.php"
         ]
     }
