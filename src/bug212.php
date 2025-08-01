@@ -15,6 +15,19 @@ class bug212 implements Bugs{
 		$bridge->solve(1, "1");
 		$this->forceCollectCycles(3);
 		$this->forceCollectCycles(4);
+		$this->dump();
+	}
+
+	public function dump() : void{
+		echo "===========gc===========" . PHP_EOL;
+		$bridge = new bridge();
+		$this->forceCollectCycles(1);
+		$races = [$bridge->rateChild(1)];
+		$bridge->race(...$races);
+		dumper::dumpMemory($bridge, "a", 100, 20000000000);
+		$this->forceCollectCycles(2);
+		$bridge->solve(1, "1");
+		$this->forceCollectCycles(3);
 	}
 
 	public function forceCollectCycles(int $runs) : int{
@@ -40,3 +53,4 @@ class bug212 implements Bugs{
 		return $cycles;
 	}
 }
+

@@ -32,10 +32,12 @@ class bridge{
 	public function reject(int $id, \Throwable $throwable) : void{
 		[$resolve, $reject] = $this->list[$id];
 		($reject)($throwable);
+		unset($this->list[$id]);
 	}
 
 	public function solve(int $id, mixed $text) : void{
 		[$resolve, $reject] = $this->list[$id];
 		($resolve)($text);
+		unset($this->list[$id]);
 	}
 }
