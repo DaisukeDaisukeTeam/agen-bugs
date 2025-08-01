@@ -1,0 +1,19 @@
+{
+    "name": "daisukedaisuketeam/agen-bugs",
+    "type": "project",
+    "require": {
+        "sof3/await-generator": "*",
+        "php": ">=8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Daisukedaisuketeam\\AgenBugs\\": "src/"
+        }
+    },
+    "scripts": {
+        "runs": [
+            "@composer install --no-dev  --classmap-authoritative --ignore-platform-reqs",
+            "@php src/main.php"
+        ]
+    }
+}
